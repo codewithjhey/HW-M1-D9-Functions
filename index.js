@@ -15,13 +15,12 @@ ASSIGNMENT RULES
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 1")
 
-let l1 = 3
-let l2 = 6
-
-function area(li, l2) {
+function area(l1, l2) {
   return l1 * l2
 }
-console.log("\n area of the associated rectangle:", (l1, l2))
+
+const areaOfTheRectangle = area(7, 9)
+console.log("\n area of the rectangle is:", areaOfTheRectangle)
 
 /* EXERCISE 2
  Write a function called "crazySum" which receives two integers as parameters.
@@ -31,16 +30,13 @@ console.log("\n area of the associated rectangle:", (l1, l2))
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 2")
 
-crazySum(5, 7)
-
-function crazySum() {
-  let crazySum = 0
-  for (let i = 0; i < arguments.length; i++) {
-    crazySum += arguments[i]
-  }
+function crazySum(r1, r2) {
+  if (r1 === r2) return r1 + r2 * 3
+  if (r1 !== r2) return r1 + r2
 }
 
-console.log("The sum of these numbers is:" + crazySum)
+const finalResult = crazySum(3, 3)
+console.log("this is the final result:", finalResult)
 
 /* EXERCISE 3
  Write a function called "crazyDiff" that computes the absolute difference between a given number and 19.
@@ -52,9 +48,9 @@ console.log("\n\n\nEXERCISE 3")
 
 function crazyDiff(c) {
   if (c <= 19) return 19 - c
-  if (c > 19) return c - 19
+  if (c > 19) return c - 19 * 3
 }
-const difference = crazyDiff(4)
+const difference = crazyDiff(50)
 console.log("The difference is: ", difference)
 
 /* EXERCISE 4
@@ -63,14 +59,15 @@ console.log("The difference is: ", difference)
 
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 4")
-boundary(300)
+
 function boundary(n) {
-  if ((boundary >= 20 && boundary <= 100) || boundary === 400) {
-    console.log("Boundary is within 20 and 100 and or is equal 400, True")
-  } else {
-    console.log("Boundary is not within 20 and 100 and not equal 400':, False")
-  }
+  if (n >= 20 && n <= 100) return true
+  if (n === 400) return true
+  else return false
 }
+
+const integerParameter = boundary(170)
+console.log("What is our integar result:", integerParameter)
 
 /* EXERCISE 5
  Write a function called "strivify" which accepts a string as a parameter.
@@ -80,6 +77,18 @@ function boundary(n) {
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 5")
 
+let ourString = "This is a string as a dictionary of words"
+let ourWord = ourString.split(" ")
+function strivify(p) {
+  if (ourWord[0] === p) return ourString
+  if (ourWord[0] !== p) return p.concat(" ", ourString)
+  else return "please provide another string"
+}
+
+const findWord = strivify("Strive")
+
+console.log(findWord)
+
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
  HINT: Modulus Operator
@@ -88,12 +97,25 @@ console.log("\n\n\nEXERCISE 5")
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 6")
 
+function check3and7(n) {
+  if (n % 3 === 0 || n % 7 === 0) return true
+}
+const multiple = check3and7(51)
+
+console.log(multiple)
 /* EXERCISE 7
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
 */
 
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 7")
+
+let myString = "This is victor"
+function reverseString(a) {
+  return myString.split("").reverse().join("")
+}
+const reversed = reverseString(myString)
+console.log("Reversed string: " + reversed)
 
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
@@ -102,6 +124,24 @@ console.log("\n\n\nEXERCISE 7")
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 8")
 
+const str =
+  "the loop can execute a block of code as long as specified condition."
+const splitStrArr = str.split(" ")
+
+let sentence = ""
+function upperFirst(m) {
+  for (let i = 0; i < splitStrArr.length; i++) {
+    let capitalizedWord = ""
+    const word = splitStrArr[i]
+
+    capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1) + " "
+    sentence += capitalizedWord
+  }
+}
+
+upperFirst(str)
+console.log(sentence)
+
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
 */
@@ -109,12 +149,27 @@ console.log("\n\n\nEXERCISE 8")
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 9")
 
+let newString = "Character"
+function cutString(str) {
+  return newString.slice(1, -1)
+  //   console.log(cutted);
+}
+let cutted = cutString(newString)
+console.log(cutted)
+
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
 
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 10")
+
+function giveMeRandom(n) {
+  return Array.from({ length: n }, () => Math.floor(Math.random() * 10))
+  //   console.log(randomArray);
+}
+let random = giveMeRandom(65)
+console.log(random)
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
