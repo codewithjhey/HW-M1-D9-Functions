@@ -77,17 +77,22 @@ console.log("What is our integar result:", integerParameter)
 /* WRITE YOUR ANSWER HERE */
 console.log("\n\n\nEXERCISE 5")
 
+//let ourString = "This is a string as a dictionary of words"
 let ourString = "This is a string as a dictionary of words"
-let ourWord = ourString.split(" ")
-function strivify(p) {
-  if (ourWord[0] === p) return ourString
-  if (ourWord[0] !== p) return p.concat(" ", ourString)
-  else return "please provide another string"
+function strivify(ourString) {
+  if (ourString === "strive") {
+    return ourString
+  } else {
+    return "strive" + " " + ourString
+  }
 }
-
-const findWord = strivify("Strive")
+const findWord = strivify(ourString)
 
 console.log(findWord)
+
+// if (ourWord[0] === strive) return ourString
+// if (ourWord[0] !== strive) return p.concat(" ", ourString)
+// else return "please provide another string"
 
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
